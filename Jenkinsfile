@@ -21,12 +21,12 @@ pipeline{
                 echo "successfully creating war file"
                 sh 'mvn clean package'
             }
-            post{
-                success{
-                    echo 'Archiving the Artifacts'
-                    archiveArtifacts artifacts: '**/target/*.war'
-                }
-            }
+            // post{
+            //     success{
+            //         echo 'Archiving the Artifacts'
+            //         archiveArtifacts artifacts: '**/target/*.war'
+            //     }
+            // }
         }
         stage('Deploy') {
             steps {
